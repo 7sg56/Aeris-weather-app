@@ -3,80 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Dashboard</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Aeris - Weather Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="logo">
-                <i class="fas fa-cloud-sun"></i>
-                <h1>WeatherAPI</h1>
-            </div>
-            <div class="search-container">
-                <div class="search-box">
-                    <i class="fas fa-search search-icon"></i>
-                    <input type="text" placeholder="Search for a city..." class="search-input">
-                    <button class="search-btn">
-                        <i class="fas fa-arrow-right"></i>
+    <div class="app-container">
+        <!-- Top Navbar -->
+        <nav class="navbar">
+            <div class="nav-content">
+                <div class="nav-brand">
+                    <i class="fas fa-wind"></i>
+                    <h1>Aeris</h1>
+                </div>
+                
+                <div class="search-container">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search for a city..." class="search-input">
+                        <button class="search-btn">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="nav-actions">
+                    <button class="refresh-btn" title="Refresh">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                    <button class="settings-btn" title="Settings">
+                        <i class="fas fa-cog"></i>
                     </button>
                 </div>
             </div>
-        </header>
+        </nav>
 
         <!-- Main Content -->
         <main class="main-content">
-            <!-- Current Weather Section -->
-            <section class="current-weather">
-                <div class="weather-card">
-                    <div class="location-info">
-                        <h2 class="city-name">San Francisco</h2>
-                        <p class="date-time">Monday, December 16 • 2:30 PM</p>
-                    </div>
-                    
+            <!-- Location Header -->
+            <header class="location-header">
+                <div class="location-info">
+                    <h2 class="city-name">London</h2>
+                    <p class="location-details">City of London, Greater London, United Kingdom</p>
+                    <p class="current-time">Friday, August 29 • 6:57 PM</p>
+                </div>
+            </header>
+
+            <!-- Current Weather Card -->
+            <section class="current-weather-section">
+                <div class="current-weather-card">
                     <div class="weather-main">
-                        <div class="temperature-section">
-                            <div class="current-temp">
-                                <span class="temp-value">72</span>
-                                <span class="temp-unit">°F</span>
+                        <div class="temperature-display">
+                            <div class="temp-value">20°</div>
+                            <div class="temp-unit">C</div>
+                        </div>
+                        <div class="weather-info">
+                            <div class="weather-icon">
+                                <img src="https://cdn.weatherapi.com/weather/64x64/day/299.png" alt="Weather">
                             </div>
-                            <div class="weather-description">
-                                <i class="fas fa-cloud-sun weather-icon"></i>
-                                <span>Partly Cloudy</span>
+                            <div class="weather-details">
+                                <h3 class="weather-condition">Moderate rain at times</h3>
+                                <p class="feels-like">Feels like 20°C</p>
                             </div>
                         </div>
-                        
-                        <div class="weather-details">
-                            <div class="detail-item">
-                                <i class="fas fa-thermometer-half"></i>
-                                <div>
-                                    <span class="detail-label">Feels like</span>
-                                    <span class="detail-value">75°F</span>
-                                </div>
+                    </div>
+                    
+                    <div class="weather-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-tint"></i>
+                            <div class="stat-content">
+                                <span class="stat-value">64%</span>
+                                <span class="stat-label">Humidity</span>
                             </div>
-                            <div class="detail-item">
-                                <i class="fas fa-tint"></i>
-                                <div>
-                                    <span class="detail-label">Humidity</span>
-                                    <span class="detail-value">65%</span>
-                                </div>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-wind"></i>
+                            <div class="stat-content">
+                                <span class="stat-value">13.3 km/h</span>
+                                <span class="stat-label">Wind</span>
                             </div>
-                            <div class="detail-item">
-                                <i class="fas fa-wind"></i>
-                                <div>
-                                    <span class="detail-label">Wind</span>
-                                    <span class="detail-value">12 mph</span>
-                                </div>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-eye"></i>
+                            <div class="stat-content">
+                                <span class="stat-value">10 km</span>
+                                <span class="stat-label">Visibility</span>
                             </div>
-                            <div class="detail-item">
-                                <i class="fas fa-eye"></i>
-                                <div>
-                                    <span class="detail-label">Visibility</span>
-                                    <span class="detail-value">10 mi</span>
-                                </div>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-compress-arrows-alt"></i>
+                            <div class="stat-content">
+                                <span class="stat-value">997 mb</span>
+                                <span class="stat-label">Pressure</span>
                             </div>
                         </div>
                     </div>
@@ -84,142 +103,204 @@
             </section>
 
             <!-- Hourly Forecast -->
-            <section class="hourly-forecast">
-                <h3 class="section-title">Hourly Forecast</h3>
+            <section class="hourly-forecast-section">
+                <div class="section-header">
+                    <h3>Hourly Forecast</h3>
+                    <span class="section-subtitle">Next 24 hours</span>
+                </div>
                 <div class="hourly-container">
                     <div class="hourly-item">
                         <span class="hour">Now</span>
-                        <i class="fas fa-cloud-sun"></i>
-                        <span class="hourly-temp">72°</span>
-                    </div>
-                    <div class="hourly-item">
-                        <span class="hour">3 PM</span>
-                        <i class="fas fa-sun"></i>
-                        <span class="hourly-temp">74°</span>
-                    </div>
-                    <div class="hourly-item">
-                        <span class="hour">4 PM</span>
-                        <i class="fas fa-sun"></i>
-                        <span class="hourly-temp">73°</span>
-                    </div>
-                    <div class="hourly-item">
-                        <span class="hour">5 PM</span>
-                        <i class="fas fa-cloud"></i>
-                        <span class="hourly-temp">71°</span>
-                    </div>
-                    <div class="hourly-item">
-                        <span class="hour">6 PM</span>
-                        <i class="fas fa-cloud"></i>
-                        <span class="hourly-temp">69°</span>
+                        <div class="hourly-icon">
+                            <img src="https://cdn.weatherapi.com/weather/64x64/day/299.png" alt="Weather">
+                        </div>
+                        <span class="hourly-temp">20°</span>
+                        <span class="hourly-condition">Rain</span>
                     </div>
                     <div class="hourly-item">
                         <span class="hour">7 PM</span>
-                        <i class="fas fa-cloud-moon"></i>
-                        <span class="hourly-temp">67°</span>
+                        <div class="hourly-icon">
+                            <img src="https://cdn.weatherapi.com/weather/64x64/night/176.png" alt="Weather">
+                        </div>
+                        <span class="hourly-temp">18°</span>
+                        <span class="hourly-condition">Cloudy</span>
+                    </div>
+                    <div class="hourly-item">
+                        <span class="hour">8 PM</span>
+                        <div class="hourly-icon">
+                            <img src="https://cdn.weatherapi.com/weather/64x64/night/176.png" alt="Weather">
+                        </div>
+                        <span class="hourly-temp">17°</span>
+                        <span class="hourly-condition">Cloudy</span>
+                    </div>
+                    <div class="hourly-item">
+                        <span class="hour">9 PM</span>
+                        <div class="hourly-icon">
+                            <img src="https://cdn.weatherapi.com/weather/64x64/night/176.png" alt="Weather">
+                        </div>
+                        <span class="hourly-temp">16°</span>
+                        <span class="hourly-condition">Cloudy</span>
+                    </div>
+                    <div class="hourly-item">
+                        <span class="hour">10 PM</span>
+                        <div class="hourly-icon">
+                            <img src="https://cdn.weatherapi.com/weather/64x64/night/176.png" alt="Weather">
+                        </div>
+                        <span class="hourly-temp">15°</span>
+                        <span class="hourly-condition">Cloudy</span>
+                    </div>
+                    <div class="hourly-item">
+                        <span class="hour">11 PM</span>
+                        <div class="hourly-icon">
+                            <img src="https://cdn.weatherapi.com/weather/64x64/night/176.png" alt="Weather">
+                        </div>
+                        <span class="hourly-temp">15°</span>
+                        <span class="hourly-condition">Cloudy</span>
                     </div>
                 </div>
             </section>
 
             <!-- Daily Forecast -->
-            <section class="daily-forecast">
-                <h3 class="section-title">7-Day Forecast</h3>
+            <section class="daily-forecast-section">
+                <div class="section-header">
+                    <h3>7-Day Forecast</h3>
+                    <span class="section-subtitle">Extended outlook</span>
+                </div>
                 <div class="daily-container">
                     <div class="daily-item">
                         <div class="day-info">
-                            <span class="day">Today</span>
-                            <span class="date">Dec 16</span>
+                            <span class="day-name">Today</span>
+                            <span class="day-date">Aug 29</span>
                         </div>
                         <div class="daily-weather">
-                            <i class="fas fa-cloud-sun"></i>
-                            <span class="weather-text">Partly Cloudy</span>
+                            <img src="https://cdn.weatherapi.com/weather/64x64/day/302.png" alt="Weather" class="daily-icon">
+                            <span class="daily-condition">Moderate rain</span>
                         </div>
                         <div class="daily-temps">
-                            <span class="high-temp">74°</span>
-                            <span class="low-temp">58°</span>
+                            <span class="high-temp">20°</span>
+                            <span class="low-temp">14°</span>
                         </div>
-                    </div>
-                    <div class="daily-item">
-                        <div class="day-info">
-                            <span class="day">Tue</span>
-                            <span class="date">Dec 17</span>
-                        </div>
-                        <div class="daily-weather">
-                            <i class="fas fa-sun"></i>
-                            <span class="weather-text">Sunny</span>
-                        </div>
-                        <div class="daily-temps">
-                            <span class="high-temp">76°</span>
-                            <span class="low-temp">60°</span>
-                        </div>
-                    </div>
-                    <div class="daily-item">
-                        <div class="day-info">
-                            <span class="day">Wed</span>
-                            <span class="date">Dec 18</span>
-                        </div>
-                        <div class="daily-weather">
+                        <div class="rain-chance">
                             <i class="fas fa-cloud-rain"></i>
-                            <span class="weather-text">Light Rain</span>
-                        </div>
-                        <div class="daily-temps">
-                            <span class="high-temp">68°</span>
-                            <span class="low-temp">55°</span>
+                            <span>97%</span>
                         </div>
                     </div>
                     <div class="daily-item">
                         <div class="day-info">
-                            <span class="day">Thu</span>
-                            <span class="date">Dec 19</span>
+                            <span class="day-name">Sat</span>
+                            <span class="day-date">Aug 30</span>
                         </div>
                         <div class="daily-weather">
-                            <i class="fas fa-cloud"></i>
-                            <span class="weather-text">Cloudy</span>
+                            <img src="https://cdn.weatherapi.com/weather/64x64/day/176.png" alt="Weather" class="daily-icon">
+                            <span class="daily-condition">Patchy rain</span>
                         </div>
                         <div class="daily-temps">
-                            <span class="high-temp">70°</span>
-                            <span class="low-temp">57°</span>
+                            <span class="high-temp">19°</span>
+                            <span class="low-temp">13°</span>
+                        </div>
+                        <div class="rain-chance">
+                            <i class="fas fa-cloud-rain"></i>
+                            <span>85%</span>
                         </div>
                     </div>
                     <div class="daily-item">
                         <div class="day-info">
-                            <span class="day">Fri</span>
-                            <span class="date">Dec 20</span>
+                            <span class="day-name">Sun</span>
+                            <span class="day-date">Aug 31</span>
                         </div>
                         <div class="daily-weather">
-                            <i class="fas fa-sun"></i>
-                            <span class="weather-text">Sunny</span>
+                            <img src="https://cdn.weatherapi.com/weather/64x64/day/116.png" alt="Weather" class="daily-icon">
+                            <span class="daily-condition">Partly cloudy</span>
                         </div>
                         <div class="daily-temps">
-                            <span class="high-temp">75°</span>
-                            <span class="low-temp">59°</span>
+                            <span class="high-temp">22°</span>
+                            <span class="low-temp">15°</span>
+                        </div>
+                        <div class="rain-chance">
+                            <i class="fas fa-cloud-rain"></i>
+                            <span>45%</span>
                         </div>
                     </div>
                     <div class="daily-item">
                         <div class="day-info">
-                            <span class="day">Sat</span>
-                            <span class="date">Dec 21</span>
+                            <span class="day-name">Mon</span>
+                            <span class="day-date">Sep 1</span>
                         </div>
                         <div class="daily-weather">
-                            <i class="fas fa-cloud-sun"></i>
-                            <span class="weather-text">Partly Cloudy</span>
+                            <img src="https://cdn.weatherapi.com/weather/64x64/day/113.png" alt="Weather" class="daily-icon">
+                            <span class="daily-condition">Sunny</span>
                         </div>
                         <div class="daily-temps">
-                            <span class="high-temp">73°</span>
-                            <span class="low-temp">58°</span>
+                            <span class="high-temp">24°</span>
+                            <span class="low-temp">16°</span>
+                        </div>
+                        <div class="rain-chance">
+                            <i class="fas fa-cloud-rain"></i>
+                            <span>10%</span>
                         </div>
                     </div>
-                    <div class="daily-item">
-                        <div class="day-info">
-                            <span class="day">Sun</span>
-                            <span class="date">Dec 22</span>
+                </div>
+            </section>
+
+            <!-- Additional Info Cards -->
+            <section class="additional-info-section">
+                <div class="info-grid">
+                    <!-- Air Quality -->
+                    <div class="info-card air-quality-card">
+                        <div class="card-header">
+                            <h4>Air Quality</h4>
+                            <div class="aqi-badge good">Good</div>
                         </div>
-                        <div class="daily-weather">
-                            <i class="fas fa-sun"></i>
-                            <span class="weather-text">Sunny</span>
+                        <div class="aqi-details">
+                            <div class="aqi-item">
+                                <span class="aqi-label">PM2.5</span>
+                                <span class="aqi-value">7.03</span>
+                            </div>
+                            <div class="aqi-item">
+                                <span class="aqi-label">PM10</span>
+                                <span class="aqi-value">9.07</span>
+                            </div>
+                            <div class="aqi-item">
+                                <span class="aqi-label">O₃</span>
+                                <span class="aqi-value">53.0</span>
+                            </div>
                         </div>
-                        <div class="daily-temps">
-                            <span class="high-temp">77°</span>
-                            <span class="low-temp">61°</span>
+                    </div>
+
+                    <!-- Sunrise/Sunset -->
+                    <div class="info-card sun-times-card">
+                        <div class="card-header">
+                            <h4>Sun Times</h4>
+                        </div>
+                        <div class="sun-times">
+                            <div class="sun-item">
+                                <i class="fas fa-sunrise"></i>
+                                <div class="sun-info">
+                                    <span class="sun-label">Sunrise</span>
+                                    <span class="sun-time">06:08 AM</span>
+                                </div>
+                            </div>
+                            <div class="sun-item">
+                                <i class="fas fa-sunset"></i>
+                                <div class="sun-info">
+                                    <span class="sun-label">Sunset</span>
+                                    <span class="sun-time">07:53 PM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- UV Index -->
+                    <div class="info-card uv-card">
+                        <div class="card-header">
+                            <h4>UV Index</h4>
+                        </div>
+                        <div class="uv-content">
+                            <div class="uv-value">0.4</div>
+                            <div class="uv-level">Low</div>
+                            <div class="uv-bar">
+                                <div class="uv-fill" style="width: 8%"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -227,6 +308,6 @@
         </main>
     </div>
 
-    <script src="script.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
