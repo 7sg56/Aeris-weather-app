@@ -32,9 +32,6 @@
                     <button class="refresh-btn" title="Refresh">
                         <i class="fas fa-sync-alt"></i>
                     </button>
-                    <button class="settings-btn" title="Settings">
-                        <i class="fas fa-cog"></i>
-                    </button>
                 </div>
             </div>
         </nav>
@@ -239,6 +236,60 @@
                             <span>10%</span>
                         </div>
                     </div>
+                    <div class="daily-item">
+                        <div class="day-info">
+                            <span class="day-name">Tue</span>
+                            <span class="day-date">Sep 2</span>
+                        </div>
+                        <div class="daily-weather">
+                            <img src="https://cdn.weatherapi.com/weather/64x64/day/116.png" alt="Weather" class="daily-icon">
+                            <span class="daily-condition">Partly cloudy</span>
+                        </div>
+                        <div class="daily-temps">
+                            <span class="high-temp">23°</span>
+                            <span class="low-temp">15°</span>
+                        </div>
+                        <div class="rain-chance">
+                            <i class="fas fa-cloud-rain"></i>
+                            <span>25%</span>
+                        </div>
+                    </div>
+                    <div class="daily-item">
+                        <div class="day-info">
+                            <span class="day-name">Wed</span>
+                            <span class="day-date">Sep 3</span>
+                        </div>
+                        <div class="daily-weather">
+                            <img src="https://cdn.weatherapi.com/weather/64x64/day/176.png" alt="Weather" class="daily-icon">
+                            <span class="daily-condition">Patchy rain</span>
+                        </div>
+                        <div class="daily-temps">
+                            <span class="high-temp">21°</span>
+                            <span class="low-temp">14°</span>
+                        </div>
+                        <div class="rain-chance">
+                            <i class="fas fa-cloud-rain"></i>
+                            <span>60%</span>
+                        </div>
+                    </div>
+                    <div class="daily-item">
+                        <div class="day-info">
+                            <span class="day-name">Thu</span>
+                            <span class="day-date">Sep 4</span>
+                        </div>
+                        <div class="daily-weather">
+                            <img src="https://cdn.weatherapi.com/weather/64x64/day/113.png" alt="Weather" class="daily-icon">
+                            <span class="daily-condition">Sunny</span>
+                        </div>
+                        <div class="daily-temps">
+                            <span class="high-temp">25°</span>
+                            <span class="low-temp">17°</span>
+                        </div>
+                        <div class="rain-chance">
+                            <i class="fas fa-cloud-rain"></i>
+                            <span>5%</span>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -254,15 +305,15 @@
                         <div class="aqi-details">
                             <div class="aqi-item">
                                 <span class="aqi-label">PM2.5</span>
-                                <span class="aqi-value">7.03</span>
+                                <span class="aqi-value pm25-value">7.03</span>
                             </div>
                             <div class="aqi-item">
                                 <span class="aqi-label">PM10</span>
-                                <span class="aqi-value">9.07</span>
+                                <span class="aqi-value pm10-value">9.07</span>
                             </div>
                             <div class="aqi-item">
                                 <span class="aqi-label">O₃</span>
-                                <span class="aqi-value">53.0</span>
+                                <span class="aqi-value o3-value">53.0</span>
                             </div>
                         </div>
                     </div>
@@ -277,14 +328,14 @@
                                 <i class="fas fa-sunrise"></i>
                                 <div class="sun-info">
                                     <span class="sun-label">Sunrise</span>
-                                    <span class="sun-time">06:08 AM</span>
+                                    <span class="sun-time sunrise-value">06:08 AM</span>
                                 </div>
                             </div>
                             <div class="sun-item">
                                 <i class="fas fa-sunset"></i>
                                 <div class="sun-info">
                                     <span class="sun-label">Sunset</span>
-                                    <span class="sun-time">07:53 PM</span>
+                                    <span class="sun-time sunset-value">07:53 PM</span>
                                 </div>
                             </div>
                         </div>
@@ -296,10 +347,10 @@
                             <h4>UV Index</h4>
                         </div>
                         <div class="uv-content">
-                            <div class="uv-value">0.4</div>
-                            <div class="uv-level">Low</div>
+                            <div class="uv-value uv-index-value">0.4</div>
+                            <div class="uv-level uv-index-level">Low</div>
                             <div class="uv-bar">
-                                <div class="uv-fill" style="width: 8%"></div>
+                                <div class="uv-fill uv-index-bar" style="width: 8%"></div>
                             </div>
                         </div>
                     </div>
